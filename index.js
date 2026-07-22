@@ -20,27 +20,63 @@ const progLangs = [
   {
     src: "icons/python.png",
     alt: "python-icon",
+    name: "Python",
   }, {
     src: "icons/java.png",
     alt: "java-icon",
+    name: "Java",
   }, {
     src: "icons/html.png",
     alt: "html-icon",
+    name: "HTML",
   }, {
     src: "icons/text.png",
     alt: "css-icon",
+    name: "CSS",
   }, {
     src: "icons/js.png",
     alt: "js-icon",
+    name: "JavaScript",
   }, {
     src: "icons/postgresql.png",
     alt: "postgresql-icon",
+    name: "PostgreSQL",
   }, {
     src: "icons/nodejs.png",
     alt: "nodejs-icon",
+    name: "Node.js",
   }, {
     src: "icons/c-sharp.png",
     alt: "c-sharp-icon",
+    name: "C#",
+  }, {
+    src: "icons/React.png",
+    alt: "react-icon",
+    name: "React",
+  }, {
+    src: "icons/Fastify.png",
+    alt: "fastify-icon",
+    name: "Fastify",
+  }, {
+    src: "icons/git.png",
+    alt: "git-icon",
+    name: "Git",
+  }, {
+    src: "icons/MongoDB.png",
+    alt: "mongodb-icon",
+    name: "MongoDB",
+  }, {
+    src: "icons/mysql.png",
+    alt: "mysql-icon",
+    name: "MySQL",
+  }, {
+    src: "icons/TypeScript.png",
+    alt: "typescript-icon",
+    name: "TypeScript",
+  }, {
+    src: "icons/npm.png",
+    alt: "npm-icon",
+    name: "NPM",
   }
 ]
 
@@ -90,11 +126,15 @@ const progLangsContainer = document.getElementById("skills");
 let skillsHTML = "";
 progLangs.forEach((lang) => {
   skillsHTML += `
-    <img
-      class="skill-icons"
-      src="${lang.src}"
-      alt="${lang.alt}"
-    />
+    <div class="skill-item">
+      <span class="skill-label">${lang.name}</span>
+      <img
+        class="skill-icons"
+        src="${lang.src}"
+        alt="${lang.alt}"
+        aria-label="${lang.name}"
+      />
+    </div>
   `
 });
 

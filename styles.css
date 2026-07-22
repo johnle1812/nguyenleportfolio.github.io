@@ -257,16 +257,51 @@ h3 {
   transition: 300ms;
 }
 
-.skill-icons {
-  height: 40px;
-  margin: 10px;
-}
-
 #skills {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 20px;
+}
+
+.skill-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.skill-label {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: rgba(18, 18, 18, 0.92);
+  color: aliceblue;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.skill-item:hover .skill-label,
+.skill-item:focus-within .skill-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.skill-icons {
+  height: 40px;
+  transition: transform 180ms ease;
+}
+
+.skill-item:hover .skill-icons,
+.skill-item:focus-within .skill-icons {
+  transform: translateY(-2px);
 }
 
 #projects-grid {
@@ -549,9 +584,12 @@ h3 {
     margin-top: 0;
   }
 
+  .skill-item {
+    margin: 5px;
+  }
+
   .skill-icons {
     height: 30px;
-    margin: 5px;
   }
 
   .project-container {
